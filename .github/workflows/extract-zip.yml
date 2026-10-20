@@ -29,7 +29,8 @@ jobs:
           fi
 
           rm -rf _zip
-          git add -A ':!.github/workflows/ci.yml'
+          
+git add -A -- . ':!.github'
 
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
