@@ -1,0 +1,41 @@
+
+name: Extract OpenSA ZIP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project files
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip
+          mkdir -p _zip
+          unzip -q opensa-chromebook-pages.zip -d _zip
+
+          if [ -d "_zip/opensa-main" ]; then
+            cp -a _zip/opensa-main/. .
+          else
+            echo "Folder opensa-main tidak ditemukan di ZIP"
+            exit 1
+          fi
+
+          rm -rf _zip
+          git add -A
+
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Extract OpenSA project files"
+            git push
+          else
+            echo "Tidak ada perubahan untuk disimpan"
+          fi
