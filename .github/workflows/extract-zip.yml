@@ -30,7 +30,7 @@ jobs:
 
           rm -rf _zip
           
-git add -A -- . ':!.github'
+          git add -A -- . ':!.github'
 
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
