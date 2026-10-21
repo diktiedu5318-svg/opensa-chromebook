@@ -1,4 +1,3 @@
-
 {
   "name": "@opensa/web",
   "version": "0.0.0",
@@ -10,6 +9,6 @@
     ]
   },
   "dependencies": {
-  "@opensa/samp-transport": "0.1.0"
-}
+    "@opensa/samp-transport": "0.1.0"
+  }
 }
