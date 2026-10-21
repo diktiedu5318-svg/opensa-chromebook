@@ -46,22 +46,19 @@ export class BrowserTransport {
   }
 
   send(packet: Uint8Array): boolean {
-    if (
-      !this.socket ||
-      this.socket.readyState !== WebSocket.OPEN
-    ) {
-      return false;
-    }
-
-    this.socket.send(
-      packet.buffer.slice(
-        packet.byteOffset,
-        packet.byteOffset + packet.byteLength
-      )
-    );
-
-    return true;
+  if (
+    !this.socket ||
+    this.socket.readyState !== WebSocket.OPEN
+  ) {
+    return false;
   }
+
+  const buffer = new ArrayBuffer(packet.byteLength);
+  new Uint8Array(buffer).set(packet);
+
+  this.socket.send(buffer);
+  return true;
+}
 
   disconnect(): void {
     const socket = this.socket;
