@@ -48,7 +48,7 @@ jobs:
           npm config get package-lock
 
       - name: Install dependencies
-        run: npm install --workspaces --ignore-scripts
+        run: npm install --include=dev --workspaces --ignore-scripts
         
 
       - name: Build
