@@ -28,13 +28,22 @@ jobs:
           node-version: 22
           cache: npm
 
+      
       - name: Check repository files
         run: |
+          echo "=== Current directory ==="
           pwd
+          echo "=== Root files ==="
           ls -la
-          git status --short
-          test -f package.json
-          test -f package-lock.json
+          echo "=== Tracked lockfiles ==="
+          git ls-files '*package-lock.json' '*npm-shrinkwrap.json'
+          echo "=== Lockfile check ==="
+          if [ -f package-lock.json ]; then
+            echo "ROOT package-lock.json FOUND"
+            head -n 5 package-lock.json
+          else
+            echo "ROOT package-lock.json NOT FOUND"
+          fi
 
       - name: Install dependencies
         run: npm ci
