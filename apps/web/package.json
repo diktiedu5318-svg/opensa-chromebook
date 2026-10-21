@@ -10,8 +10,6 @@
     ]
   },
   "dependencies": {
-    "@opensa/samp-transport": "workspace:*"
+    "@opensa/samp-transport": "0.0.0"
   }
 }
-
-
