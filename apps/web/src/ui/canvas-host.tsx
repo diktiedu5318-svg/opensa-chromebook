@@ -3,6 +3,7 @@ import type { Vec3 } from '@opensa/game/interfaces/world-adapter.interface';
 import type { SpawnedVehicle, VehiclePlacement } from '@opensa/game/vehicle/vehicle-lod.system';
 
 import { Game } from '@opensa/game';
+import { BrowserTransport } from '@opensa/samp-transport';
 import { GtaSaWorldAdapter } from '@opensa/game/adapters/gta-sa-world.adapter';
 import { AnimationController } from '@opensa/game/character/animation-controller';
 import { CharacterAnimationSystem } from '@opensa/game/character/character-animation.system';
