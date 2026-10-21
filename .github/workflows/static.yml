@@ -48,7 +48,8 @@ jobs:
           npm config get package-lock
 
       - name: Install dependencies
-        run: npm install --workspaces
+        run: npm install --workspaces --ignore-scripts
+        
 
       - name: Build
         run: npm run build -- --base=/opensa-chromebook/
