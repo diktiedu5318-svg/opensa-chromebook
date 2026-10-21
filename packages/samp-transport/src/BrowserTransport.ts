@@ -54,10 +54,10 @@ export class BrowserTransport {
   }
 
   const buffer = new ArrayBuffer(packet.byteLength);
-  new Uint8Array(buffer).set(packet);
+new Uint8Array(buffer).set(packet);
 
-  this.socket.send(buffer);
-  return true;
+this.socket.send(buffer);
+return true;
 }
 
   disconnect(): void {
