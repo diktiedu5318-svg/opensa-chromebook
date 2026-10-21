@@ -39,16 +39,17 @@
   "apps/viewer",
   "packages/samp-transport",
   "tools/rw-codec",
-    "packages/renderware",
-    "packages/game-build",
-    "packages/loaders",
-    "packages/vfs",
-    "packages/game",
-    "tools/map-optimizer",
-    "tools/lod-generator",
-    "tools/vehicle-optimizer",
-    "tools/timecyc-builder"
-  ],
+  "tools/tool-kit",
+  "packages/renderware",
+  "packages/game-build",
+  "packages/loaders",
+  "packages/vfs",
+  "packages/game",
+  "tools/map-optimizer",
+  "tools/lod-generator",
+  "tools/vehicle-optimizer",
+  "tools/timecyc-builder"
+]
   "scripts": {
     "build": "tsc -b && vite build",
     "build:game:anderius": "tsx scripts/build-game.ts --game anderius",
