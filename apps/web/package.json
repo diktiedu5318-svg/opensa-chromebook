@@ -1,3 +1,4 @@
+
 {
   "name": "@opensa/web",
   "version": "0.0.0",
@@ -8,3 +9,5 @@
       "type:app"
     ]
   }
+}
+
