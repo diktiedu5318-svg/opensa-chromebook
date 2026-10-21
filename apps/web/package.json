@@ -7,8 +7,4 @@
     "tags": [
       "type:app"
     ]
-  },
-  "dependencies": {
-    "@opensa/samp-transport": "0.1.0"
   }
-}
