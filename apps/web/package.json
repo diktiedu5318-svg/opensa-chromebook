@@ -10,6 +10,6 @@
     ]
   },
   "dependencies": {
-    "@opensa/samp-transport": "0.0.0"
+    "@opensa/samp-transport": "0.1.0"
   }
 }
