@@ -49,7 +49,7 @@
   "tools/lod-generator",
   "tools/vehicle-optimizer",
   "tools/timecyc-builder"
-]
+],
   "scripts": {
     "build": "tsc -b && vite build",
     "build:game:anderius": "tsx scripts/build-game.ts --game anderius",
