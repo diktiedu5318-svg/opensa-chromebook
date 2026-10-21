@@ -7,7 +7,7 @@ import { GtaSaWorldAdapter } from '@opensa/game/adapters/gta-sa-world.adapter';
 import { AnimationController } from '@opensa/game/character/animation-controller';
 import { CharacterAnimationSystem } from '@opensa/game/character/character-animation.system';
 import { orientCharacter } from '@opensa/game/character/orient-character';
-import { setupCharacter } from '@opensa/game/character/setup-character';
+import { setupCharacter, type CharacterContext } from '@opensa/game/character/setup-character';
 import { Velocity } from '@opensa/game/ecs/components';
 import { TouchInputSource } from '@opensa/game/input';
 import { createWindMod } from '@opensa/game/mods/wind.mod';
@@ -106,6 +106,7 @@ const WEATHERS: readonly { index: number; label: string }[] = WEATHER_NAMES.map(
 interface Bootstrap {
   /** Whether enter/exit-vehicle is actionable now — gates the mobile Enter button's visibility. */
   canEnterExit: () => boolean;
+  character: CharacterContext;
   debugActions: DebugActions;
   game: Game;
   /** On-screen touch input source (present only on touch devices); drives `<TouchControls>`. */
@@ -1051,7 +1052,7 @@ function bootstrap(
       game.addInputSource(touchInput);
     }
 
-    return { canEnterExit: () => enterVehicle.canEnterExit(), debugActions, game, touchInput };
+     return {   canEnterExit: () => enterVehicle.canEnterExit(),   character,   debugActions,   game,   touchInput, };
   })();
 
   return bootstrapped;
